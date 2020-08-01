@@ -24,6 +24,8 @@ func (dc *Datacenter) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 		return business.QueryIDs(stub, args)
 	case "queryData":
 		return business.QueryData(stub, args)
+	case "logQuery":
+		return business.LogQuery(stub, args)
 	default:
 		return shim.Error("invalid method")
 	}
