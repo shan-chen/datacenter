@@ -119,11 +119,11 @@ pub extern "C" fn rust_do_query( some_string:* const u8, some_len:usize,result_s
   }
   else{
     let raw_result_str = String::from_utf8(result_vec).unwrap();
-    unsafe{
       let l=raw_result_str.len();
       if l>result_string_limit{
         panic!("{} > {}",l,result_string_limit);
       }
+    unsafe{
       *result_string_size=l;
       ptr::copy_nonoverlapping(raw_result_str.as_ptr(), result_string, raw_result_str.len());
     }
@@ -194,11 +194,11 @@ pub extern "C" fn rust_search_title( some_string:* const u8, some_len:usize, res
   }
   else{
     let raw_result_str = String::from_utf8(result_vec).unwrap();
-    unsafe{
       let l=raw_result_str.len();
       if l>result_string_limit{
         panic!("{} > {}",l,result_string_limit);
       }
+    unsafe{
       *result_string_size=l;
       ptr::copy_nonoverlapping(raw_result_str.as_ptr(), result_string, raw_result_str.len());
     }
