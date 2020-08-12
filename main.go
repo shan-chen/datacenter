@@ -26,6 +26,10 @@ func (dc *Datacenter) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 		return business.QueryData(stub, args)
 	case "logQuery":
 		return business.LogQuery(stub, args)
+	case "uploadMpcData":
+		return business.UploadMpcData(stub, args)
+	case "executeMpcTask":
+		return business.ExecuteMpcTask(stub, args)
 	default:
 		return shim.Error("invalid method")
 	}
@@ -35,5 +39,4 @@ func main() {
 	if err := shim.Start(new(Datacenter)); err != nil {
 		fmt.Printf("Error starting MetaData chaincode: %s", err)
 	}
-
 }

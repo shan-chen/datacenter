@@ -19,7 +19,12 @@ type QueryResult struct {
 }
 
 type SGXResult struct {
-	A []string
+	A []Article
+}
+
+type Article struct {
+	Id    string
+	Score float32
 }
 
 type QueryLog struct {
