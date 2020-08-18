@@ -1,7 +1,0 @@
-*.o
-Enclave_u.*
-Enclave_t.*
-*.a
-*.so
-/bin/
-target/

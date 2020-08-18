@@ -6,3 +6,7 @@ type MpcTask struct {
 	Data    string `json:"data"`
 	Sponsor string `json:"sponsor"`
 }
+
+type MpcArgs struct {
+  A []string
+}
